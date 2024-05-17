@@ -90,11 +90,11 @@
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
             </select>
-            <input type="number" id="creatinine_levels" name="creatinine_levels" placeholder="Enter Creatinine Levels value..." class="input-box"  required>
-            <input type="number" id="egfr" name="egfr" placeholder="Enter Estimated Glomerular Filtration rate..." class="input-box"  required>
-            <input type="number" id="bun" name="bun" placeholder="Enter Blood Urea Nitrogen value..." class="input-box"  required>
-            <input type="number" id="al" name="al" placeholder="Enter Albumin ratio..." class="input-box"  required>
-            <input type="number" id="diabetis" name="diabetis" placeholder="Enter Diabetes..." class="input-box"  required>
+            <input type="number" id="creatinine_levels" name="creatinine_levels" placeholder="Enter Creatinine Levels value..." class="input-box"  step="0.1" min="0" max="500"  required>
+            <input type="number" id="egfr" name="egfr" placeholder="Enter Estimated Glomerular Filtration rate..." class="input-box"  step="0.1" min="0" max="500"  required>
+            <input type="number" id="bun" name="bun" placeholder="Enter Blood Urea Nitrogen value..." class="input-box" step="0.1" min="0" max="500"  required>
+            <input type="number" id="al" name="al" placeholder="Enter Albumin ratio..." class="input-box" step="0.1" min="0" max="500"  required>
+            <input type="number" id="diabetis" name="diabetis" placeholder="Enter Diabetes..." class="input-box" step="0.1" min="0" max="500"   required>
             <button type="submit" class="submit-button">Detect CKD</button>
         </form>
 
