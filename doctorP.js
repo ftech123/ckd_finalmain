@@ -16,14 +16,12 @@ var database = firebase.database();
 function save() {
     var patientName = document.getElementById('patientName').value;
     var patientAge = document.getElementById('patientAge').value;
-    // var prescriptionDay = document.getElementById('prescriptionDay').value;
     var prescriptionMedicine = document.getElementById('prescriptionMedicine').value;
     var prescriptionInstructions = document.getElementById('prescriptionInstructions').value;
 
     database.ref('prescriptions/' + patientName).set({
         patientName: patientName,
         patientAge: patientAge,
-        // prescriptionDay: prescriptionDay,
         prescriptionMedicine: prescriptionMedicine,
         prescriptionInstructions: prescriptionInstructions
     }).then(function () {
@@ -44,8 +42,7 @@ function get() {
             var formattedPrescription = `
                 Patient Name: ${prescription.patientName}   
                 Patient Age: ${prescription.patientAge} 
-                Prescription Medicine: ${prescription.prescriptionMedicine} 
-                // Prescription Day: ${prescription.prescriptionDay}   
+                Prescription Medicine: ${prescription.prescriptionMedicine}  
                 Prescription Instructions: ${prescription.prescriptionInstructions} 
             `;
             displayMessage(formattedPrescription);
