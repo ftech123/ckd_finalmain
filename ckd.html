@@ -83,9 +83,10 @@
     <div class="container">
         <h2>Chronic Kidney Disease Detector</h2>
         <div id="messageContainer" style="text-align: center;"></div>
-        <form id="ckdForm" class="contact-form">
+        <form id="ckdForm" class="contact-form" onsubmit="detectCKD(event)">
             <input type="number" id="age" name="age" placeholder="Enter Patient Age..." class="input-box" required>
             <select id="gender" name="gender" class="input-box" placeholder="Select patient gender..." required>
+                <option value="" disabled selected>Select patient gender...</option>
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
             </select>
@@ -94,7 +95,7 @@
             <input type="number" id="bun" name="bun" placeholder="Enter Blood Urea Nitrogen value..." class="input-box" min="0" required>
             <input type="number" id="al" name="al" placeholder="Enter Albumin ratio..." class="input-box" min="0" required>
             <input type="number" id="diabetis" name="diabetis" placeholder="Enter Diabetes..." class="input-box" min="0" required>
-            <button type="button" onclick="detectCKD()" class="submit-button">Detect CKD</button>
+            <button type="submit" class="submit-button">Detect CKD</button>
         </form>
 
         <div id="medicalReport" class="medical-report"></div>
@@ -117,7 +118,7 @@
             Prescription</a>
         <a href="avalabilityuser.html" class="px-4">
             <i class="fas fa-clock"></i>
-            Avalability</a>
+            Availability</a>
         <a href="viewMessage.html" class="px-4">
             <i class="fas fa-envelope"></i>
             Messages</a>
@@ -130,7 +131,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        function detectCKD() {
+        function detectCKD(event) {
+            event.preventDefault();
             // Get input values
             var age = parseFloat(document.getElementById('age').value);
             var gender = document.getElementById('gender').value;
@@ -229,4 +231,3 @@
     </script>
 </body>
 </html>
-
